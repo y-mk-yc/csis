@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Page</title>
+</head>
+<body>
+    <h1>Leave a Comment</h1>
+    <form action="/submit_comment" method="POST">
+        <textarea name="comment" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        // For demonstration, inject the XSS payload here
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var comment = document.querySelector('textarea').value;
+            document.body.innerHTML += comment;
+        });
+    </script>
+</body>
+</html>
