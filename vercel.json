@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/get-cookies.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/get-cookies",
+            "dest": "/api/get-cookies.js"
+        }
+    ]
+}
