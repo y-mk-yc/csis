@@ -2,15 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "api/steal-cookies.js",
+        "src": "index.js", 
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
-        "src": "/api/steal-cookies",
-        "dest": "/api/steal-cookies.js"
+        "src": "/(.*)",
+        "dest": "/index.js"
       }
     ]
   }
-  

